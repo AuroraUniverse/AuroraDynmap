@@ -1,10 +1,12 @@
 package org.dynmap.towny.events;
 
-import com.palmergames.bukkit.towny.object.Town;
+
+import com.sun.istack.internal.NotNull;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.jetbrains.annotations.NotNull;
+
+import ru.etysoft.aurorauniverse.world.Town;
 
 public class BuildTownMarkerDescriptionEvent extends Event {
 

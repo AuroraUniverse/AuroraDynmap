@@ -1,8 +1,7 @@
-name: Dynmap-Towny
+name: Dynmap-Aurora
 main: org.dynmap.towny.DynmapTownyPlugin
 version: "${project.version}"
-author: LlmDl
+authors: [LlmDl, karlov_m]
 api-version: 1.14
-depend: [ dynmap, Towny ]
-softdepend: [ TownyChat ]
+depend: [ dynmap, AuroraUniverse ]
 

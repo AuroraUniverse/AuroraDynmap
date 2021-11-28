@@ -4,8 +4,15 @@ update:
   # Seconds between checks for Residence updates
   period: 300
 
+strings:
+  on: "on"
+  off: "off"
+  monsters: "Monsters: "
+  fire: "Fire: "
+  nation: "Nation: "
+
 layer:
-  name: "Towny"
+  name: "AuroraUniverse"
   # Make mobs layer hidden by default
   hidebydefault: false
   # ordering priority in layer menu (low goes before high - default is 0)
