@@ -49,7 +49,7 @@ public class DynmapTownyPlugin extends JavaPlugin {
 
 
     private static Logger log;
-    private static final String DEF_INFOWINDOW = "<div class=\"infowindow\"><span style=\"font-size:120%;\">%regionname% (%nation%)</span><br /> Mayor <span style=\"font-weight:bold;\">%playerowners%</span><br /> Associates <span style=\"font-weight:bold;\">%playermanagers%</span><br/>Flags<br /><span style=\"font-weight:bold;\">%flags%</span></div>";
+    private static String DEF_INFOWINDOW ;
     private static final String NATION_NONE = "_none_";
     Plugin dynmap;
     DynmapAPI api;
@@ -491,8 +491,8 @@ public class DynmapTownyPlugin extends JavaPlugin {
 
     private String boolToString(boolean b)
     {
-        if(b) return getConfig().getString("strings.on");
-      return getConfig().getString("strings.off");
+        if(b) return getConfig().getString("strings.on-st");
+        return getConfig().getString("strings.off-st");
     }
 
     private void addStyle(Town town, String resid, String natid, AreaMarker m) {
@@ -945,6 +945,10 @@ public class DynmapTownyPlugin extends JavaPlugin {
 
     public void onEnable() {
         info("initializing");
+        DEF_INFOWINDOW = "<div class=\"infowindow\"><span style=\"font-size:120%;\">%regionname% (%nation%)</span><br /> " +
+              getConfig().getString("strings.mayor")  + " <span style=\"font-weight:bold;\">%playerowners%</span><br /> " +
+                getConfig().getString("strings.residents") +" <span style=\"font-weight:bold;\">%playermanagers%</span><br/>"+
+                getConfig().getString("strings.flags") +"<br /><span style=\"font-weight:bold;\">%flags%</span></div>";
         PluginManager pm = getServer().getPluginManager();
         /* Get dynmap */
         dynmap = pm.getPlugin("dynmap");
@@ -998,9 +1002,9 @@ public class DynmapTownyPlugin extends JavaPlugin {
         /* Now, add marker set for mobs (make it transient) */
         set = markerapi.getMarkerSet("towny.markerset");
         if (set == null)
-            set = markerapi.createMarkerSet("towny.markerset", cfg.getString("layer.name", "Towny"), null, false);
+            set = markerapi.createMarkerSet("towny.markerset", cfg.getString("layer.name", "AuroraUniverse"), null, false);
         else
-            set.setMarkerSetLabel(cfg.getString("layer.name", "Towny"));
+            set.setMarkerSetLabel(cfg.getString("layer.name", "AuroraUniverse"));
         if (set == null) {
             severe("Error creating marker set");
             return;

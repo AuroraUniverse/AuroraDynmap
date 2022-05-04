@@ -5,11 +5,16 @@ update:
   period: 300
 
 strings:
-  on: "on"
-  off: "off"
+  on-st: "on"
+  off-st: "off"
   monsters: "Monsters: "
   fire: "Fire: "
   nation: "Nation: "
+  exp: "Explosions: "
+  mayor: "Mayor: "
+  residents: "Residents: "
+  flags: "Flags: "
+  balance: "Balance: "
 
 layer:
   name: "AuroraUniverse"
